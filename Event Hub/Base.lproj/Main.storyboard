@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="collection view cell content view" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="AirbnbCereal_W_Bd.otf">
+            <string>AirbnbCerealWBd</string>
+        </array>
+        <array key="AirbnbCereal_W_Bk.otf">
+            <string>AirbnbCerealWBk</string>
+        </array>
+    </customFonts>
+    <scenes>
+        <!--On Boarding View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="OnBoardingViewController" customModule="Event_Hub" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Onboarding Background" translatesAutoresizingMaskIntoConstraints="NO" id="Kk6-QN-wzy">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                            </imageView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hOP-sh-slm">
+                                <rect key="frame" x="40" y="799" width="334" height="26"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="i7p-df-Krp">
+                                        <rect key="frame" x="0.0" y="-12" width="61" height="38"/>
+                                        <color key="tintColor" systemColor="systemGray3Color"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" title="Skip">
+                                            <fontDescription key="titleFontDescription" name="AirbnbCerealWBd" family="AirbnbCereal_W_Bd" pointSize="18"/>
+                                        </buttonConfiguration>
+                                        <connections>
+                                            <action selector="skipButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="KLA-oJ-K87"/>
+                                        </connections>
+                                    </button>
+                                    <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="chG-Qh-vL6">
+                                        <rect key="frame" x="109.5" y="0.0" width="115.5" height="26"/>
+                                    </pageControl>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cWe-XC-Fy8">
+                                        <rect key="frame" x="266.5" y="-12" width="67.5" height="38"/>
+                                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" title="Next">
+                                            <fontDescription key="titleFontDescription" name="AirbnbCerealWBlk" family="AirbnbCereal_W_Blk" pointSize="18"/>
+                                        </buttonConfiguration>
+                                        <connections>
+                                            <action selector="nextButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="464-bT-Q2I"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="chG-Qh-vL6" firstAttribute="centerY" secondItem="hOP-sh-slm" secondAttribute="centerY" id="7b9-EJ-j2L"/>
+                                    <constraint firstItem="i7p-df-Krp" firstAttribute="leading" secondItem="hOP-sh-slm" secondAttribute="leading" id="FCo-cC-Nyi"/>
+                                    <constraint firstAttribute="trailing" secondItem="cWe-XC-Fy8" secondAttribute="trailing" id="OEw-1d-UI5"/>
+                                    <constraint firstAttribute="bottom" secondItem="chG-Qh-vL6" secondAttribute="bottom" id="XO8-iy-1t7"/>
+                                    <constraint firstAttribute="bottom" secondItem="cWe-XC-Fy8" secondAttribute="bottom" id="bkF-OF-1Vr"/>
+                                    <constraint firstAttribute="bottom" secondItem="i7p-df-Krp" secondAttribute="bottom" id="onp-l9-NTA"/>
+                                    <constraint firstItem="chG-Qh-vL6" firstAttribute="centerX" secondItem="hOP-sh-slm" secondAttribute="centerX" id="yWy-pl-tkt"/>
+                                </constraints>
+                            </view>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="oCq-cE-D4R">
+                                <rect key="frame" x="0.0" y="44" width="414" height="714"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="dO4-mY-MGg">
+                                    <size key="itemSize" width="413" height="711"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="OnBoardingCollectionViewCell" id="nT7-V8-cRi" customClass="OnBoardingCollectionViewCell" customModule="Event_Hub" customModuleProvider="target">
+                                        <rect key="frame" x="0.5" y="0.0" width="413" height="711"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="SNg-4G-dAA">
+                                            <rect key="frame" x="0.0" y="0.0" width="413" height="711"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="qWB-Rw-qkT">
+                                                    <rect key="frame" x="0.0" y="0.0" width="413" height="529"/>
+                                                </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Explore Upcoming and Nearby Events" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8d6-6W-AId">
+                                                    <rect key="frame" x="39.5" y="572" width="333" height="81"/>
+                                                    <fontDescription key="fontDescription" name="AirbnbCerealWBd" family="AirbnbCereal_W_Bd" pointSize="22"/>
+                                                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="In publishing and graphic design, Lorem is a placeholder text commonly" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lMq-hT-yih">
+                                                    <rect key="frame" x="40" y="661.5" width="333" height="39.5"/>
+                                                    <fontDescription key="fontDescription" name="AirbnbCerealWBk" family="AirbnbCereal_W_Bk" pointSize="15"/>
+                                                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="qWB-Rw-qkT" firstAttribute="leading" secondItem="SNg-4G-dAA" secondAttribute="leading" constant="45" id="4S0-Yf-mPL"/>
+                                                <constraint firstItem="8d6-6W-AId" firstAttribute="leading" secondItem="SNg-4G-dAA" secondAttribute="leading" constant="40" id="F6x-yK-4Ms"/>
+                                                <constraint firstItem="qWB-Rw-qkT" firstAttribute="top" secondItem="SNg-4G-dAA" secondAttribute="top" constant="3" id="FZy-eU-NOT"/>
+                                                <constraint firstItem="lMq-hT-yih" firstAttribute="leading" secondItem="SNg-4G-dAA" secondAttribute="leading" constant="40" id="KqZ-UB-1Nf"/>
+                                                <constraint firstAttribute="bottom" secondItem="lMq-hT-yih" secondAttribute="bottom" constant="10" id="P1s-Bn-Njm"/>
+                                                <constraint firstAttribute="trailing" secondItem="8d6-6W-AId" secondAttribute="trailing" constant="40" id="Ukb-IZ-Thv"/>
+                                                <constraint firstItem="8d6-6W-AId" firstAttribute="top" secondItem="qWB-Rw-qkT" secondAttribute="bottom" constant="45" id="iDa-9d-3df"/>
+                                                <constraint firstAttribute="trailing" secondItem="lMq-hT-yih" secondAttribute="trailing" constant="40" id="mcN-JX-GJU"/>
+                                                <constraint firstAttribute="trailing" secondItem="qWB-Rw-qkT" secondAttribute="trailing" constant="45" id="yMy-VK-2vb"/>
+                                            </constraints>
+                                        </collectionViewCellContentView>
+                                        <size key="customSize" width="413" height="711"/>
+                                        <connections>
+                                            <outlet property="slideDescriptionLabel" destination="lMq-hT-yih" id="AkQ-cl-9xD"/>
+                                            <outlet property="slideImageView" destination="qWB-Rw-qkT" id="gTQ-2e-6Ne"/>
+                                            <outlet property="slideTitleLabel" destination="8d6-6W-AId" id="ADK-mI-sx9"/>
+                                        </connections>
+                                    </collectionViewCell>
+                                </cells>
+                                <connections>
+                                    <outlet property="dataSource" destination="BYZ-38-t0r" id="x35-b8-WDT"/>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="9mi-vU-FoN"/>
+                                </connections>
+                            </collectionView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="hOP-sh-slm" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="40" id="5n3-Uj-mk8"/>
+                            <constraint firstItem="oCq-cE-D4R" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="6xp-1j-AQz"/>
+                            <constraint firstItem="Kk6-QN-wzy" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="ARJ-eL-0b0"/>
+                            <constraint firstAttribute="bottom" secondItem="Kk6-QN-wzy" secondAttribute="bottom" id="T2c-ad-kgi"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="hOP-sh-slm" secondAttribute="trailing" constant="40" id="Zbk-e0-Ybm"/>
+                            <constraint firstItem="Kk6-QN-wzy" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailing" id="Zl8-Vv-ap8"/>
+                            <constraint firstItem="oCq-cE-D4R" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="aAu-XT-Wyg"/>
+                            <constraint firstAttribute="bottom" secondItem="oCq-cE-D4R" secondAttribute="bottom" constant="150" id="bfe-4C-pCK"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="hOP-sh-slm" secondAttribute="bottom" constant="37" id="oYi-hw-0fP"/>
+                            <constraint firstItem="Kk6-QN-wzy" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="pC7-Xs-EWd"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="ImageCollectionView" destination="oCq-cE-D4R" id="mEG-3u-l9i"/>
+                        <outlet property="nextButton" destination="cWe-XC-Fy8" id="dXQ-le-2jh"/>
+                        <outlet property="pageControl" destination="chG-Qh-vL6" id="7Th-zB-uc4"/>
+                        <outlet property="skipButton" destination="i7p-df-Krp" id="6LU-vt-o4I"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="131.8840579710145" y="109.82142857142857"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="Onboarding Background" width="1125" height="2436"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemGray3Color">
+            <color red="0.7803921568627451" green="0.7803921568627451" blue="0.80000000000000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
+</document>
